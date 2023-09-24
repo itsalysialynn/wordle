@@ -1,11 +1,14 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
+import Board from './Board';
 
-const WORD_LENGTH = 5;
+export const WORD_LENGTH = 5;
+export const MAX_NUMBER_OF_GUESSES = 6;
 
 const Wordle = () => {
   const [word, setWord] = useState(undefined);
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
+  const [guesses, setGuesses] = useState([]);
 
   const fetchWord = useCallback(
     () =>
@@ -28,11 +31,15 @@ const Wordle = () => {
     return <div>Loading...</div>;
   }
 
-  if (hasError) {
+  if (hasError || !word) {
     return <div>Something went wrong...</div>;
   }
 
-  return <div>{word}</div>;
+  return (
+    <main>
+      <Board guesses={guesses} word={word} />
+    </main>
+  );
 };
 
 export default Wordle;

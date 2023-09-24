@@ -9,7 +9,7 @@ describe('Wordle', () => {
     jest.restoreAllMocks();
   });
 
-  it('renders the five-letter word that is fetched', async () => {
+  it('renders the board when the word is successfully fetched', async () => {
     fetchMock = jest.spyOn(global, 'fetch').mockImplementation(() =>
       Promise.resolve({
         ok: true,
@@ -18,7 +18,7 @@ describe('Wordle', () => {
       } as Response),
     );
     render(<Wordle />);
-    await waitFor(() => expect(screen.getByText(/micks/i)).toBeDefined());
+    await waitFor(() => expect(screen.findByRole(/group/i)).toBeDefined());
   });
 
   it('renders the loading text when isLoading is true', () => {
