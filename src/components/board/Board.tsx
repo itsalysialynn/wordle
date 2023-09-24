@@ -1,10 +1,10 @@
-import { MAX_NUMBER_OF_GUESSES } from '../Wordle';
+import { MAX_NUMBER_OF_GUESSES } from '../../App';
 import BoardRow from './BoardRow';
 import styled from 'styled-components';
 
 const BoardLayout = styled.div`
   display: grid;
-  grid-template-rows: repeat(${MAX_NUMBER_OF_GUESSES}, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   grid-gap: 5px;
   padding: 10px;
   box-sizing: border-box;

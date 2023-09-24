@@ -1,11 +1,11 @@
-import { WORD_LENGTH } from '../Wordle';
+import { WORD_LENGTH } from '../../App';
 import { useCallback } from 'react';
 import Tile from './Tile';
 import styled from 'styled-components';
 
 const BoardRowLayout = styled.div`
   display: grid;
-  grid-template-columns: repeat(${WORD_LENGTH}, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-gap: 5px;
 `;
 

@@ -1,14 +1,9 @@
 import styled from 'styled-components';
-
-export enum TileValidation {
-  CORRECT = 'CORRECT',
-  INCORRECT = 'INCORRECT',
-  PRESENT = 'PRESENT',
-}
+import { LetterValidation } from '../types';
 
 interface TileProps {
   letter?: string | undefined | null;
-  validation?: keyof typeof TileValidation;
+  validation?: keyof typeof LetterValidation;
 }
 
 const Tile = styled.div<TileProps>`
@@ -30,7 +25,7 @@ const Tile = styled.div<TileProps>`
   ${({ letter }) => !letter && `border: 2px solid #d3d6da;`}
   ${({ letter, validation }) =>
     letter &&
-    validation === TileValidation[TileValidation.CORRECT] &&
+    validation === LetterValidation[LetterValidation.CORRECT] &&
     `
       border: 2px solid #6aaa64;
       background-color: #6aaa64;
@@ -38,7 +33,7 @@ const Tile = styled.div<TileProps>`
 
   ${({ letter, validation }) =>
     letter &&
-    validation === TileValidation[TileValidation.INCORRECT] &&
+    validation === LetterValidation[LetterValidation.INCORRECT] &&
     `
       border: 2px solid #787c7e;
       background-color: #787c7e;
@@ -46,7 +41,7 @@ const Tile = styled.div<TileProps>`
 
   ${({ letter, validation }) =>
     letter &&
-    validation === TileValidation[TileValidation.PRESENT] &&
+    validation === LetterValidation[LetterValidation.PRESENT] &&
     `
       border: 2px solid #c9b458;
       background-color: #c9b458;

@@ -1,6 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
 import Board from './board/Board';
 import styled from 'styled-components';
+import Keyboard from './keyboard/Keyboard';
+import { WORD_LENGTH } from '../App';
 
 const WordleLayout = styled.div`
   display: flex;
@@ -8,9 +10,6 @@ const WordleLayout = styled.div`
   align-items: center;
   flex-grow: 1;
 `;
-
-export const WORD_LENGTH = 5;
-export const MAX_NUMBER_OF_GUESSES = 6;
 
 const Wordle = () => {
   const [word, setWord] = useState(undefined);
@@ -44,9 +43,12 @@ const Wordle = () => {
   }
 
   return (
-    <WordleLayout>
-      <Board guesses={guesses} word={word} />
-    </WordleLayout>
+    <>
+      <WordleLayout>
+        <Board guesses={guesses} word={word} />
+      </WordleLayout>
+      <Keyboard guesses={guesses} word={word} />
+    </>
   );
 };
 
