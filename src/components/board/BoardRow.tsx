@@ -1,5 +1,6 @@
-import { WORD_LENGTH } from './Wordle';
+import { WORD_LENGTH } from '../Wordle';
 import { useCallback } from 'react';
+import Tile from './Tile';
 
 interface BoardRowProps {
   guess: string | undefined | null;
@@ -11,7 +12,7 @@ const BoardRow = ({ guess, ariaLabel }: BoardRowProps) => {
   const createEmptySquares = useCallback(
     () =>
       [...Array(WORD_LENGTH)].map((_, index) => (
-        <div key={index} role="tile" aria-label={`Letter ${index + 1}, empty`}></div>
+        <Tile key={index} role="tile" aria-label={`Letter ${index + 1}, empty`} />
       )),
     [],
   );
@@ -20,9 +21,9 @@ const BoardRow = ({ guess, ariaLabel }: BoardRowProps) => {
     <div aria-label={ariaLabel} role="group">
       {guess
         ? guess?.split('').map((letter, index) => (
-            <div key={index} role="tile" aria-label={`Letter ${index + 1}`}>
+            <Tile letter={letter} key={index} role="tile" aria-label={`Letter ${index + 1}`}>
               {letter}
-            </div>
+            </Tile>
           ))
         : createEmptySquares()}
     </div>

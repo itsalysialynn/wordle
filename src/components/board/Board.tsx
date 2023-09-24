@@ -1,4 +1,4 @@
-import { MAX_NUMBER_OF_GUESSES } from './Wordle';
+import { MAX_NUMBER_OF_GUESSES } from '../Wordle';
 import BoardRow from './BoardRow';
 
 interface BoardProps {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import BoardRow from './BoardRow';
-import { WORD_LENGTH } from './Wordle';
+import { WORD_LENGTH } from '../Wordle';
 
 describe('BoardRow', () => {
   it('renders a letter for each WORD_LENGTH when there is no guess', async () => {

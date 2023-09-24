@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
-import Board from './Board';
+import Board from './board/Board';
 
 export const WORD_LENGTH = 5;
 export const MAX_NUMBER_OF_GUESSES = 6;

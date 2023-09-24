@@ -36,6 +36,7 @@
     ]
   },
   "devDependencies": {
+    "jest-styled-components": "^7.1.1",
     "prettier": "^3.0.3"
   }
 }

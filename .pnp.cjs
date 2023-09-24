@@ -35,6 +35,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:16.18.54"],\
             ["@types/react", "npm:18.2.22"],\
             ["@types/react-dom", "npm:18.2.7"],\
+            ["jest-styled-components", "virtual:650160b777bfc69edea9b34e54557f4ae2c10e5a799ff64cb2da57fc1f57ac346fad7f9b304c9a86613b314dafb37c3e8ee68c602516f576442e43912bcadc46#npm:7.1.1"],\
             ["prettier", "npm:3.0.3"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:650160b777bfc69edea9b34e54557f4ae2c10e5a799ff64cb2da57fc1f57ac346fad7f9b304c9a86613b314dafb37c3e8ee68c602516f576442e43912bcadc46#npm:18.2.0"],\
@@ -11580,6 +11581,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["jest-styled-components", [\
+        ["npm:7.1.1", {\
+          "packageLocation": "./.yarn/cache/jest-styled-components-npm-7.1.1-d52d5c89e7-1376d12118.zip/node_modules/jest-styled-components/",\
+          "packageDependencies": [\
+            ["jest-styled-components", "npm:7.1.1"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:650160b777bfc69edea9b34e54557f4ae2c10e5a799ff64cb2da57fc1f57ac346fad7f9b304c9a86613b314dafb37c3e8ee68c602516f576442e43912bcadc46#npm:7.1.1", {\
+          "packageLocation": "./.yarn/__virtual__/jest-styled-components-virtual-e513a2c054/0/cache/jest-styled-components-npm-7.1.1-d52d5c89e7-1376d12118.zip/node_modules/jest-styled-components/",\
+          "packageDependencies": [\
+            ["jest-styled-components", "virtual:650160b777bfc69edea9b34e54557f4ae2c10e5a799ff64cb2da57fc1f57ac346fad7f9b304c9a86613b314dafb37c3e8ee68c602516f576442e43912bcadc46#npm:7.1.1"],\
+            ["@adobe/css-tools", "npm:4.3.1"],\
+            ["@types/styled-components", null],\
+            ["styled-components", "virtual:650160b777bfc69edea9b34e54557f4ae2c10e5a799ff64cb2da57fc1f57ac346fad7f9b304c9a86613b314dafb37c3e8ee68c602516f576442e43912bcadc46#npm:6.0.8"]\
+          ],\
+          "packagePeers": [\
+            "@types/styled-components",\
+            "styled-components"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["jest-util", [\
         ["npm:27.5.1", {\
           "packageLocation": "./.yarn/cache/jest-util-npm-27.5.1-26e68baa39-ac8d122f6d.zip/node_modules/jest-util/",\
@@ -18143,6 +18167,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:16.18.54"],\
             ["@types/react", "npm:18.2.22"],\
             ["@types/react-dom", "npm:18.2.7"],\
+            ["jest-styled-components", "virtual:650160b777bfc69edea9b34e54557f4ae2c10e5a799ff64cb2da57fc1f57ac346fad7f9b304c9a86613b314dafb37c3e8ee68c602516f576442e43912bcadc46#npm:7.1.1"],\
             ["prettier", "npm:3.0.3"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:650160b777bfc69edea9b34e54557f4ae2c10e5a799ff64cb2da57fc1f57ac346fad7f9b304c9a86613b314dafb37c3e8ee68c602516f576442e43912bcadc46#npm:18.2.0"],\

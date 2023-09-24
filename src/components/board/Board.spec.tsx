@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Board from './Board';
-import { MAX_NUMBER_OF_GUESSES } from './Wordle';
+import { MAX_NUMBER_OF_GUESSES } from '../Wordle';
 
 describe('Board', () => {
   it('renders a BoardRow for each MAX_NUMBER_OF_GUESSES', async () => {
