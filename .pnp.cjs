@@ -35,6 +35,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:16.18.54"],\
             ["@types/react", "npm:18.2.22"],\
             ["@types/react-dom", "npm:18.2.7"],\
+            ["prettier", "npm:3.0.3"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:650160b777bfc69edea9b34e54557f4ae2c10e5a799ff64cb2da57fc1f57ac346fad7f9b304c9a86613b314dafb37c3e8ee68c602516f576442e43912bcadc46#npm:18.2.0"],\
             ["react-scripts", "virtual:650160b777bfc69edea9b34e54557f4ae2c10e5a799ff64cb2da57fc1f57ac346fad7f9b304c9a86613b314dafb37c3e8ee68c602516f576442e43912bcadc46#npm:5.0.1"],\
@@ -14860,6 +14861,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["prettier", [\
+        ["npm:3.0.3", {\
+          "packageLocation": "./.yarn/unplugged/prettier-npm-3.0.3-fced695dae/node_modules/prettier/",\
+          "packageDependencies": [\
+            ["prettier", "npm:3.0.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["pretty-bytes", [\
         ["npm:5.6.0", {\
           "packageLocation": "./.yarn/cache/pretty-bytes-npm-5.6.0-0061079c9f-9c082500d1.zip/node_modules/pretty-bytes/",\
@@ -17869,6 +17879,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:16.18.54"],\
             ["@types/react", "npm:18.2.22"],\
             ["@types/react-dom", "npm:18.2.7"],\
+            ["prettier", "npm:3.0.3"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:650160b777bfc69edea9b34e54557f4ae2c10e5a799ff64cb2da57fc1f57ac346fad7f9b304c9a86613b314dafb37c3e8ee68c602516f576442e43912bcadc46#npm:18.2.0"],\
             ["react-scripts", "virtual:650160b777bfc69edea9b34e54557f4ae2c10e5a799ff64cb2da57fc1f57ac346fad7f9b304c9a86613b314dafb37c3e8ee68c602516f576442e43912bcadc46#npm:5.0.1"],\
