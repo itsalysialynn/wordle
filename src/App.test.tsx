@@ -1,8 +1,10 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import App from "./App";
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import App from './App';
 
-test("renders learn react link", () => {
-  render(<App />);
-  expect(screen.getByText(/Hello World!/i)).toBeDefined();
+describe('App', () => {
+  it('renders the title', () => {
+    render(<App />);
+    expect(screen.getByText(/Wordle/i)).toBeDefined();
+  });
 });

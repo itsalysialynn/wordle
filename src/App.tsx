@@ -1,7 +1,13 @@
-import React from "react";
+import React from 'react';
+import Wordle from './components/Wordle';
 
 function App() {
-  return <div className="App">Hello World!</div>;
+  return (
+    <div className="App">
+      <h1>Wordle</h1>
+      <Wordle />
+    </div>
+  );
 }
 
 export default App;
