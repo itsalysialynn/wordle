@@ -1,6 +1,6 @@
 # Wordle
 
-This is a simple digital clock built with React, created as a practice exercise. You can find the practice instructions at https://www.greatfrontend.com/questions/user-interface/wordle
+This is a wordle clone built with React, created as a practice exercise. You can find the practice instructions at https://www.greatfrontend.com/questions/user-interface/wordle
 
 ### Requirements
 
