@@ -5,7 +5,11 @@ import Wordle from './Wordle';
 describe('Wordle', () => {
   let fetchMock: any = undefined;
 
-  beforeEach(() => {
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
+
+  it('renders the five-letter word that is fetched', async () => {
     fetchMock = jest.spyOn(global, 'fetch').mockImplementation(() =>
       Promise.resolve({
         ok: true,
@@ -13,13 +17,6 @@ describe('Wordle', () => {
         json: async () => ['micks'],
       } as Response),
     );
-  });
-
-  afterEach(() => {
-    jest.restoreAllMocks();
-  });
-
-  it('renders the five-letter word that is fetched', async () => {
     render(<Wordle />);
     await waitFor(() => expect(screen.getByText(/micks/i)).toBeDefined());
   });
