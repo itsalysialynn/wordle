@@ -1,6 +1,13 @@
 import { WORD_LENGTH } from '../Wordle';
 import { useCallback } from 'react';
 import Tile from './Tile';
+import styled from 'styled-components';
+
+const BoardRowLayout = styled.div`
+  display: grid;
+  grid-template-columns: repeat(${WORD_LENGTH}, 1fr);
+  grid-gap: 5px;
+`;
 
 interface BoardRowProps {
   guess: string | undefined | null;
@@ -18,7 +25,7 @@ const BoardRow = ({ guess, ariaLabel }: BoardRowProps) => {
   );
 
   return (
-    <div aria-label={ariaLabel} role="group">
+    <BoardRowLayout aria-label={ariaLabel} role="group">
       {guess
         ? guess?.split('').map((letter, index) => (
             <Tile letter={letter} key={index} role="tile" aria-label={`Letter ${index + 1}`}>
@@ -26,7 +33,7 @@ const BoardRow = ({ guess, ariaLabel }: BoardRowProps) => {
             </Tile>
           ))
         : createEmptySquares()}
-    </div>
+    </BoardRowLayout>
   );
 };
 

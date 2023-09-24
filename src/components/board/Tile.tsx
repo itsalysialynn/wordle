@@ -12,7 +12,6 @@ interface TileProps {
 }
 
 const Tile = styled.div<TileProps>`
-  width: 100%;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -25,6 +24,8 @@ const Tile = styled.div<TileProps>`
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
+  height: 52px;
+  width: 52px;
 
   ${({ letter }) => !letter && `border: 2px solid #d3d6da;`}
   ${({ letter, validation }) =>
