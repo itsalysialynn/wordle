@@ -2,13 +2,13 @@ import { ReactNode, useContext, createContext, useState } from 'react';
 import { useGuesses } from './useGuesses';
 
 interface KeyboardValues {
-  onClick: (guess: string) => void;
+  onClickKey: (guess: string) => void;
   onEnter: (guess: string) => void;
   stagedGuess: string;
 }
 export const KeyboardContext = createContext<KeyboardValues>({
   stagedGuess: '',
-  onClick: () => {},
+  onClickKey: () => {},
   onEnter: () => {},
 });
 
@@ -31,7 +31,7 @@ export const KeyboardProvider = ({ children }: KeyboardProviderProps) => {
     }
   };
 
-  const onClick = (key: string) => {
+  const onClickKey = (key: string) => {
     if (key === 'backspace') {
       return handleBackspace();
     } else if (key === 'enter') {
@@ -41,7 +41,7 @@ export const KeyboardProvider = ({ children }: KeyboardProviderProps) => {
   };
 
   return (
-    <KeyboardContext.Provider value={{ stagedGuess, onClick, onEnter }}>
+    <KeyboardContext.Provider value={{ stagedGuess, onClickKey, onEnter }}>
       {children}
     </KeyboardContext.Provider>
   );

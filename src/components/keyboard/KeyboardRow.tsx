@@ -17,13 +17,13 @@ interface KeyboardRowProps {
 }
 
 const KeyboardRow = ({ keyboardRow }: KeyboardRowProps) => {
-  const { onClick } = useKeyboard();
+  const { onClickKey } = useKeyboard();
 
   return (
     <KeyboardRowLayout>
       {keyboardRow.map((key) => (
         <Key
-          onClick={() => onClick(key)}
+          onClick={() => onClickKey(key)}
           keyText={key}
           key={key}
           role="button"
