@@ -3,6 +3,8 @@ import Board from './board/Board';
 import styled from 'styled-components';
 import Keyboard from './keyboard/Keyboard';
 import { WORD_LENGTH } from '../App';
+import { GuessesProvider } from '../hooks/useGuesses';
+import { KeyboardProvider } from '../hooks/useKeyboard';
 
 const WordleLayout = styled.div`
   display: flex;
@@ -15,7 +17,6 @@ const Wordle = () => {
   const [word, setWord] = useState(undefined);
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
-  const [guesses, setGuesses] = useState([]);
 
   const fetchWord = useCallback(
     () =>
@@ -44,10 +45,14 @@ const Wordle = () => {
 
   return (
     <>
-      <WordleLayout>
-        <Board guesses={guesses} word={word} />
-      </WordleLayout>
-      <Keyboard guesses={guesses} word={word} />
+      <GuessesProvider word={word}>
+        <KeyboardProvider>
+          <WordleLayout>
+            <Board word={word} />
+          </WordleLayout>
+          <Keyboard word={word} />
+        </KeyboardProvider>
+      </GuessesProvider>
     </>
   );
 };

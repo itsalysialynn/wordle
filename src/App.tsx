@@ -1,4 +1,3 @@
-import React from 'react';
 import Wordle from './components/Wordle';
 import styled from 'styled-components';
 

@@ -1,6 +1,7 @@
 import { MAX_NUMBER_OF_GUESSES } from '../../App';
 import BoardRow from './BoardRow';
 import styled from 'styled-components';
+import { useGuesses } from '../../hooks/useGuesses';
 
 const BoardLayout = styled.div`
   display: grid;
@@ -12,10 +13,11 @@ const BoardLayout = styled.div`
 
 interface BoardProps {
   word: string;
-  guesses: string[];
 }
 
-const Board = ({ word, guesses }: BoardProps) => {
+const Board = ({ word }: BoardProps) => {
+  const { guesses } = useGuesses();
+
   return (
     <BoardLayout>
       {[...Array(MAX_NUMBER_OF_GUESSES)].map((_, index) => (

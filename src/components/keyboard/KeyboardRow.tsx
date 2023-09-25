@@ -2,6 +2,7 @@ import BackspaceIcon from './BackspaceIcon';
 import styled from 'styled-components';
 import Key from './Key';
 import { LetterValidation } from '../types';
+import { useKeyboard } from '../../hooks/useKeyboard';
 
 const KeyboardRowLayout = styled.div`
   display: flex;
@@ -13,17 +14,26 @@ const KeyboardRowLayout = styled.div`
 interface KeyboardRowProps {
   keyboardRow: string[];
   word: string;
-  guesses: string[];
 }
 
-const KeyboardRow = ({ keyboardRow }: KeyboardRowProps) => (
-  <KeyboardRowLayout>
-    {keyboardRow.map((key) => (
-      <Key keyText={key} key={key}>
-        {key === 'backspace' ? <BackspaceIcon /> : key}
-      </Key>
-    ))}
-  </KeyboardRowLayout>
-);
+const KeyboardRow = ({ keyboardRow }: KeyboardRowProps) => {
+  const { onClick } = useKeyboard();
+
+  return (
+    <KeyboardRowLayout>
+      {keyboardRow.map((key) => (
+        <Key
+          onClick={() => onClick(key)}
+          keyText={key}
+          key={key}
+          role="button"
+          aria-label={`${key} key`}
+        >
+          {key === 'backspace' ? <BackspaceIcon /> : key}
+        </Key>
+      ))}
+    </KeyboardRowLayout>
+  );
+};
 
 export default KeyboardRow;

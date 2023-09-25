@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import KeyboardRow from './KeyboardRow';
+import { useKeyboard } from '../../hooks/useKeyboard';
 
 const KeyboardLayout = styled.div`
   height: 200px;
@@ -11,7 +12,6 @@ const KeyboardLayout = styled.div`
 
 interface KeyboardProps {
   word: string;
-  guesses: string[];
 }
 
 const keyboardRows = [
@@ -19,12 +19,16 @@ const keyboardRows = [
   ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
   ['enter', 'z', 'x', 'c', 'v', 'b', 'n', 'm', 'backspace'],
 ];
-const Keyboard = ({ word, guesses }: KeyboardProps) => (
-  <KeyboardLayout>
-    {keyboardRows.map((keyboardRow, index) => (
-      <KeyboardRow word={word} guesses={guesses} key={index} keyboardRow={keyboardRow} />
-    ))}
-  </KeyboardLayout>
-);
+const Keyboard = ({ word }: KeyboardProps) => {
+  const { stagedGuess } = useKeyboard();
+  return (
+    <KeyboardLayout>
+      {stagedGuess}
+      {keyboardRows.map((keyboardRow, index) => (
+        <KeyboardRow word={word} key={index} keyboardRow={keyboardRow} />
+      ))}
+    </KeyboardLayout>
+  );
+};
 
 export default Keyboard;
